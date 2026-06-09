@@ -6,9 +6,10 @@ console.log('DB CONFIG:', {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
 });
+
 const { Pool } = require('pg');
 
-
+console.log("DATABASE_URL EXISTS =", !!process.env.DATABASE_URL);
 const pool = process.env.DATABASE_URL
   ? new Pool({
       connectionString: process.env.DATABASE_URL,
